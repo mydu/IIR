@@ -43,7 +43,8 @@ while True:
 			# geo="NA"
 			place="NA"
 		print tweet.text
-		hashtag=[i["text"].encode("utf-8") for i in tweet.entities.get('hashtags')]
+		if ()
+		hashtag=" ".join([i["text"].encode("utf-8") for i in tweet.entities.get('hashtags')])
 		# csvWriter.writerow([tweet.created_at,tweet])
 		# cursor.execute('''INSERT INTO ParisTable(time,status,geo,place,user_location) VALUES(?,?,?,?,?)''' ,(tweet.created_at, unicode(tweet.text),place,str(geo),unicode(tweet.user.location.encode)))
 		csvWriter.writerow([tweet.created_at,tweet.text.encode("utf-8"),hashtag,place.encode("utf-8"),tweet.user.location.encode("utf-8")])

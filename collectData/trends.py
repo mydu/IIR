@@ -10,10 +10,11 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
  
-trends=api.trends_places(1) 
+trends=api.trends_place(1) 
 for i in trends:
     print i['created_at']+","+i['trends']["name"] 
 places=api.trends_available()
 for i in places:
-    print i['name']+","+i['country']+","+i['woeid']
+	if i["placeType"]["name"]=="Country":
+    	print i['name']+","+i['country']+","+i['woeid']
 
